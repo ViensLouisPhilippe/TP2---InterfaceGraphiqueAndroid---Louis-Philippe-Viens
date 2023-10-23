@@ -1,6 +1,8 @@
 package com.example.tp1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,6 +30,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    QuestionAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        this.initRecycler();
+        this.remplirRecycler();
     }
 
     @Override
@@ -70,5 +75,26 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void initRecycler() {
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        // specify an adapter (see also next example)
+        adapter = new QuestionAdapter();
+        recyclerView.setAdapter(adapter);
+    }
+    private void remplirRecycler() {
+        for (int i = 0 ; i < 4 ; i++) {
+            Question p = new Question();
+            p.Text = "Bob ?";
+            adapter.list.add(p);
+        }
+        adapter.notifyDataSetChanged();
     }
 }
