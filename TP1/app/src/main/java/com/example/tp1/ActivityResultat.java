@@ -80,7 +80,7 @@ public class ActivityResultat extends AppCompatActivity {
             chart.getData().notifyDataChanged();
             chart.notifyDataSetChanged();
         } else {
-            set1 = new BarDataSet(values, "Points");
+            set1 = new BarDataSet(values, "Notes");
 
             set1.setDrawIcons(false);
 
@@ -92,5 +92,8 @@ public class ActivityResultat extends AppCompatActivity {
             data.setBarWidth(.9f);
             chart.setData(data);
         }
+
+
     }
+
 }
