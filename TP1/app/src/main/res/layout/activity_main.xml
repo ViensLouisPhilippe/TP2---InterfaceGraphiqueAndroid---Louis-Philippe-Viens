@@ -13,11 +13,11 @@
 
 
     <Button
-        android:id="@+id/btnresultat"
+        android:id="@+id/btnCreationQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#A3A3A3"
-        android:text="@string/btn_resultat"
+        android:text="@string/btn_creationQuestion"
         android:textColor="#000000"
         android:textSize="16sp" />
 

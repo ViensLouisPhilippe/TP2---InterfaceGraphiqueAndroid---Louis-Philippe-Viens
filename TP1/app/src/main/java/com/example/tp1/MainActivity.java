@@ -35,21 +35,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_main);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
 
-        binding.btnresultat.setOnClickListener(new View.OnClickListener() {
+
+        binding.btnCreationQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, ActivityResultat.class);
+                Intent i = new Intent(MainActivity.this, ActivityCreationQuestion.class);
                 startActivity(i);
             }
         });
         this.initRecycler();
-        this.remplirRecycler();
+        //this.remplirRecycler();  //Le code fonctionne pas a questionner au prof
     }
 
     @Override
@@ -90,11 +91,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
     private void remplirRecycler() {
-        for (int i = 0 ; i < 4 ; i++) {
-            Question p = new Question();
-            p.Text = "Bob ?";
-            adapter.list.add(p);
-        }
+        adapter.list.clear();
+        Question a = new Question();
+        a.Text = "Que penses-tu du dernier jedi?";
+        Question b = new Question();
+        b.Text = "Que penses-tu du nouvel espoir?";
+        Question c = new Question();
+        c.Text = "Que penses-tu du Réveil de la force?";
+        adapter.list.add(a);
+        adapter.list.add(b);
+        adapter.list.add(c);
         adapter.notifyDataSetChanged();
     }
 }
