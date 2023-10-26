@@ -54,23 +54,23 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
         // - replace the contents of the view with that element
         Question personneCourante = list.get(position);
 
-        View.OnClickListener btn2 = new View.OnClickListener() {
+        View.OnClickListener btnText = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = (new Intent(holder.itemView.getContext(), ActivityResultat.class));
+                Intent i = (new Intent(holder.itemView.getContext(), ActivityEcranDeVote.class));
                 holder.itemView.getContext().startActivity(i);
             }
         };
         holder.tvQuestion.setText(personneCourante.Text);
-        holder.tvQuestion.setOnClickListener(btn2);
-        View.OnClickListener btn1 = new View.OnClickListener() {
+        holder.tvQuestion.setOnClickListener(btnText);
+        View.OnClickListener btnImage = new View.OnClickListener() {
         @Override
             public void onClick(View v) {
             Intent i = (new Intent(holder.itemView.getContext(), ActivityResultat.class));
             holder.itemView.getContext().startActivity(i);
             }
         };
-        holder.btnResultat.setOnClickListener(btn1);
+        holder.btnResultat.setOnClickListener(btnImage);
 
 
         Log.i("DEBOGAGE", "appel a onBindViewHolder " + position);
