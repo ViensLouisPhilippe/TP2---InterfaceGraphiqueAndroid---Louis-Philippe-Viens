@@ -1,6 +1,7 @@
 package com.example.tp1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         this.initRecycler();
-        //this.remplirRecycler();  //Le code fonctionne pas a questionner au prof
+        this.remplirRecycler();
+
     }
 
     @Override
@@ -88,7 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
         // specify an adapter (see also next example)
         adapter = new QuestionAdapter();
+        recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(adapter);
+
     }
     private void remplirRecycler() {
         adapter.list.clear();
@@ -102,5 +106,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.list.add(b);
         adapter.list.add(c);
         adapter.notifyDataSetChanged();
+
     }
 }
