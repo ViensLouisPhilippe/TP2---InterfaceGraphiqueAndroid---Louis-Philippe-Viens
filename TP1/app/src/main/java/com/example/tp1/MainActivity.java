@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         Question b = new Question();
         b.Text = "Que penses-tu du gouvernement Trudeau?";
         Question c = new Question();
-        c.Text = "Que penses-tu ?";
+        c.Text = "Que penses-tu du cours de prog web?";
         Question d = new Question();
         d.Text = "Que penses-tu de game of thrones?";
         Question e = new Question();
