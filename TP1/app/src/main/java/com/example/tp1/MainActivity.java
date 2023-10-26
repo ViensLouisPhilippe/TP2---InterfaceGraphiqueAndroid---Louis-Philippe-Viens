@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     private void remplirRecycler() {
         adapter.list.clear();
         Question a = new Question();
-        a.Text = "Que penses-tu de l'ascension de la déscolarisation?";
+        a.Text = "Que penses-tu des élèves déscolarisés?";
         Question b = new Question();
         b.Text = "Que penses-tu du gouvernement Trudeau?";
         Question c = new Question();
